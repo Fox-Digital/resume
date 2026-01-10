@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bob Fox | Casino Product Manager</title>
-    
+
     <!-- TAILWIND CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- TAILWIND CONFIG -->
     <script>
         tailwind.config = {
@@ -16,7 +17,7 @@
                 extend: {
                     colors: {
                         slate: {
-                            850: '#151f32', 
+                            850: '#151f32',
                             950: '#020617',
                         }
                     }
@@ -24,29 +25,61 @@
             }
         }
     </script>
-    
+
     <!-- FONTS & ICONS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        html { scroll-behavior: smooth; }
-        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* Scrollbar Hide */
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
 
         /* Custom Page Scrollbar */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        html.dark ::-webkit-scrollbar-track { background: #0f172a; }
-        
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; border: 2px solid #f1f5f9; }
-        html.dark ::-webkit-scrollbar-thumb { background: #334155; border: 2px solid #0f172a; }
-        
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        html.dark ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        html.dark ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 6px;
+            border: 2px solid #f1f5f9;
+        }
+
+        html.dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border: 2px solid #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        html.dark ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
 
         /* Blob Backgrounds */
         .blob-blue {
@@ -54,42 +87,71 @@
         }
 
         /* Grab Cursors */
-        .cursor-grab { cursor: grab; }
-        .cursor-grabbing { cursor: grabbing; }
+        .cursor-grab {
+            cursor: grab;
+        }
+
+        .cursor-grabbing {
+            cursor: grabbing;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 selection:bg-blue-100 selection:text-blue-900 dark:selection:bg-blue-900 dark:selection:text-blue-100 overflow-x-hidden">
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 selection:bg-blue-100 selection:text-blue-900 dark:selection:bg-blue-900 dark:selection:text-blue-100 overflow-x-hidden">
 
     <!-- ==================== IMAGE MODAL ==================== -->
-    <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeModal()">
+    <div id="imageModal"
+        class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300"
+        onclick="closeModal()">
         <div class="relative max-w-6xl max-h-full">
-            <img id="modalImg" src="" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain" onclick="event.stopPropagation()">
-            <button onclick="closeModal()" class="absolute -top-12 right-0 text-white/80 hover:text-white text-4xl transition">&times;</button>
+            <img id="modalImg" src="" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain"
+                onclick="event.stopPropagation()">
+            <button onclick="closeModal()"
+                class="absolute -top-12 right-0 text-white/80 hover:text-white text-4xl transition">&times;</button>
             <p class="text-center text-white/50 text-sm mt-4 font-mono">Click outside to close</p>
         </div>
     </div>
 
     <!-- ==================== RESUME HEADER ==================== -->
-    <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-6 py-3 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div
+        class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-3 flex flex-row items-center justify-between gap-4 relative">
             <!-- Name & Title -->
             <div>
-                <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tighter">BOB FOX</h1>
-                <p class="text-slate-500 dark:text-slate-400 font-semibold text-[10px] md:text-xs tracking-widest uppercase mt-0.5">Product Manager • Casino & Poker</p>
+                <h1 class="text-xl md:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tighter">BOB FOX
+                </h1>
+                <p
+                    class="text-slate-500 dark:text-slate-400 font-semibold text-[10px] md:text-xs tracking-widest uppercase mt-2">
+                    Product Manager • Casino & Poker</p>
             </div>
-            
+
             <!-- Action Buttons -->
-            <div class="flex items-center gap-5">
-                <button onclick="toggleTheme()" class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+            <div class="absolute top-2 right-6 flex items-center gap-3 md:static md:gap-5">
+                <!-- 1. LinkedIn -->
+                <a href="https://linkedin.com/in/BobFox777" target="_blank"
+                    class="text-[#0077b5] dark:text-[#4cb5f5] hover:scale-110 transition-transform">
+                    <i class="fab fa-linkedin text-2xl md:text-4xl"></i>
+                </a>
+
+                <!-- 2. Email -->
+                <!-- Mobile Icon -->
+                <a href="mailto:BobFox777@gmail.com"
+                    class="md:hidden text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <i class="far fa-envelope text-2xl"></i>
+                </a>
+                <!-- Desktop Button -->
+                <a href="mailto:BobFox777@gmail.com"
+                    class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl text-sm font-bold hover:bg-blue-600 dark:hover:bg-blue-100 transition shadow-md">
+                    <i class="far fa-envelope"></i> Email
+                </a>
+
+                <!-- 3. Theme Toggle -->
+                <button onclick="toggleTheme()"
+                    class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                     <i class="fas fa-sun hidden dark:block"></i>
                     <i class="fas fa-moon block dark:hidden"></i>
                 </button>
-                <a href="https://linkedin.com/in/BobFox777" target="_blank" class="text-[#0077b5] dark:text-[#4cb5f5] hover:scale-110 transition-transform">
-                    <i class="fab fa-linkedin text-4xl"></i>
-                </a>
-                <a href="mailto:BobFox777@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl text-sm font-bold hover:bg-blue-600 dark:hover:bg-blue-100 transition shadow-md">
-                    <i class="far fa-envelope"></i> Email
-                </a>
             </div>
         </div>
     </div>
@@ -98,60 +160,90 @@
     <header class="relative pt-12 pb-16 md:pt-16 md:pb-24 px-6 overflow-hidden">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                
+
                 <!-- BOX 1: Main Intro -->
-                <div class="md:col-span-8 bg-slate-900 dark:bg-slate-850 text-white rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl group border border-transparent dark:border-slate-800">
-                    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/30 transition duration-1000"></div>
+                <div
+                    class="md:col-span-8 bg-slate-900 dark:bg-slate-850 text-white rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl group border border-transparent dark:border-slate-800">
+                    <div
+                        class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/30 transition duration-1000">
+                    </div>
                     <div class="relative z-10 h-full flex flex-col justify-center">
                         <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
                             Building intelligent <br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">gaming products.</span>
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">gaming
+                                products.</span>
                         </h2>
-                        
+
                         <div class="space-y-6 text-slate-300 text-lg leading-relaxed">
                             <p class="font-medium text-white text-xl">
-                                I’m a data-driven <strong>Casino & Poker Product Manager</strong>. I combine a passion for player experience with operational precision to build products that perform.
+                                I’m a <strong>Casino Product Manager</strong> with a strong operational backbone.
                             </p>
-                        
-                            <div class="flex items-center gap-3 text-slate-400 text-base border-l-4 border-blue-500 pl-4">
+                            <p class="font-medium text-white text-xl">
+                                I deliver successful products by blending user-centric design with rigorous operational
+                                excellence.
+                            </p>
+
+                            <div
+                                class="flex items-center gap-3 text-slate-400 text-base border-l-4 border-blue-500 pl-4">
                                 <i class="fas fa-arrow-down animate-bounce text-blue-400"></i>
-                                Scroll down to see details of tasks for my roles and flagship achievements / projects.
+                                Scroll down to see details of tasks for my roles and flagship projects.
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- BOX 2: Skills & Contact -->
-                <div class="md:col-span-4 bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden transition-colors duration-300">
-                    <div>
-                        <h3 class="text-slate-400 dark:text-slate-500 uppercase tracking-widest text-xs font-bold mb-4">Core Stack</h3>
+                <div
+                    class="md:col-span-4 bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden transition-colors duration-300">
+                    <div class="hidden md:block">
+                        <h3 class="text-slate-400 dark:text-slate-500 uppercase tracking-widest text-xs font-bold mb-4">
+                            Core Stack</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50 rounded-lg text-xs md:text-sm font-bold">Product Management</span>
-                            <span class="px-3 py-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50 rounded-lg text-xs md:text-sm font-bold">Gaming Operations</span>
-                            <span class="px-3 py-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50 rounded-lg text-xs md:text-sm font-bold">Excel Models</span>
-                            <span class="px-3 py-2 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-800/50 rounded-lg text-xs md:text-sm font-bold">BI</span>
-                            <span class="px-3 py-2 bg-fuchsia-50 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 border border-fuchsia-100 dark:border-fuchsia-800/50 rounded-lg text-xs md:text-sm font-bold">AI Automation</span>
-                            <span class="px-3 py-2 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-800/50 rounded-lg text-xs md:text-sm font-bold">IMS</span>
-                            <span class="px-3 py-2 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-800/50 rounded-lg text-xs md:text-sm font-bold">CMS</span>
-                            <span class="px-3 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50 rounded-lg text-xs md:text-sm font-bold">Supplier Relations</span>
-                            <span class="px-3 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50 rounded-lg text-xs md:text-sm font-bold">Compliance</span>
-                            <span class="px-3 py-2 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 border border-rose-100 dark:border-rose-800/50 rounded-lg text-xs md:text-sm font-bold">Promotions</span>
+                            <span
+                                class="px-3 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50 rounded-lg text-xs md:text-sm font-bold">Product
+                                Management</span>
+                            <span
+                                class="px-3 py-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50 rounded-lg text-xs md:text-sm font-bold">Gaming
+                                Operations</span>
+                            <span
+                                class="px-3 py-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50 rounded-lg text-xs md:text-sm font-bold">Excel
+                                Models</span>
+                            <span
+                                class="px-3 py-2 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-800/50 rounded-lg text-xs md:text-sm font-bold">BI</span>
+                            <span
+                                class="px-3 py-2 bg-fuchsia-50 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 border border-fuchsia-100 dark:border-fuchsia-800/50 rounded-lg text-xs md:text-sm font-bold">AI
+                                Automation</span>
+                            <span
+                                class="px-3 py-2 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-800/50 rounded-lg text-xs md:text-sm font-bold">IMS</span>
+                            <span
+                                class="px-3 py-2 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-800/50 rounded-lg text-xs md:text-sm font-bold">CMS</span>
+                            <span
+                                class="px-3 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50 rounded-lg text-xs md:text-sm font-bold">Supplier
+                                Relations</span>
+                            <span
+                                class="px-3 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50 rounded-lg text-xs md:text-sm font-bold">Compliance</span>
+                            <span
+                                class="px-3 py-2 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 border border-rose-100 dark:border-rose-800/50 rounded-lg text-xs md:text-sm font-bold">Promotions</span>
                         </div>
                     </div>
-                    
-                       <div class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">
-                    <!-- 1. Email -->
-                    <a href="mailto:BobFox777@gmail.com" class="flex items-center justify-center gap-2 w-full bg-slate-900 dark:bg-white hover:bg-blue-600 dark:hover:bg-slate-200 text-white dark:text-slate-900 font-bold py-3 rounded-xl transition duration-300 shadow-md">
-                        <i class="far fa-envelope"></i> Email
-                    </a>
-                    
-                    <!-- 2. LinkedIn -->
-                    <a href="https://linkedin.com/in/BobFox777" target="_blank" class="flex items-center justify-center gap-2 w-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-[#0077b5] dark:text-[#4cb5f5] font-bold py-3 rounded-xl transition duration-300">
-                        <i class="fab fa-linkedin text-xl"></i> LinkedIn
-                    </a>
 
-            </div>
-        </div>
+                    <div
+                        class="mt-0 pt-0 border-t-0 md:mt-8 md:pt-8 md:border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">
+                        <!-- 1. Email -->
+                        <a href="mailto:BobFox777@gmail.com"
+                            class="flex items-center justify-center gap-2 w-full bg-slate-100 dark:bg-white hover:bg-slate-200 dark:hover:bg-slate-200 text-slate-900 dark:text-slate-900 font-bold py-3 rounded-xl transition duration-300 shadow-sm border border-slate-200 dark:border-transparent">
+                            <i class="far fa-envelope"></i> Email
+                        </a>
+
+                        <!-- 2. LinkedIn -->
+                        <a href="https://linkedin.com/in/BobFox777" target="_blank"
+                            class="flex items-center justify-center gap-2 w-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-[#0077b5] dark:text-[#4cb5f5] font-bold py-3 rounded-xl transition duration-300">
+                            <i class="fab fa-linkedin text-xl"></i> LinkedIn
+                        </a>
+
+                    </div>
+                </div>
     </header>
 
     <!-- ==================== EXPERIENCE CONTAINER ==================== -->
@@ -159,141 +251,253 @@
         <div class="absolute top-0 left-0 w-full h-full blob-blue pointer-events-none opacity-40"></div>
 
         <!-- === ROLE 1: CASINO PM === -->
-        <section class="w-full bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-900 transition-colors duration-300">
-            <div class="max-w-6xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-                
+        <section
+            class="w-full bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-900 transition-colors duration-300">
+            <div class="max-w-6xl mx-auto px-6 py-8 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+
                 <!-- Sidebar -->
                 <div class="lg:col-span-4">
-                    <div class="sticky top-24"> 
+                    <div class="sticky top-24">
                         <div class="flex items-center gap-2 mb-3">
                             <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
-                            <span class="text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wide">04/2024 - Present</span>
+                            <span
+                                class="text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wide">04/2024
+                                - 01/2026</span>
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-2">Casino Product Manager</h2>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-2">Casino
+                            Product Manager</h2>
                         <div class="mb-6">
-                            <img src="digitalbeat.png" alt="Digital Beat" class="h-8 w-auto object-contain object-left" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-xl text-slate-500 font-medium\'>Digital Beat</div>'">
+                            <img src="digitalbeat.png" alt="Digital Beat" class="h-8 w-auto object-contain object-left"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-xl text-slate-500 font-medium\'>Digital Beat</div>'">
                         </div>
-                        
-                        <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                            <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-medium leading-relaxed text-sm">
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span><span><strong>Casino Management:</strong> Oversee roadmap & release activity.</span></li>
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span><span><strong>Feature Dev:</strong> Manage rollout of platform enhancements.</span></li>
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span><span><strong>Operational Excellence:</strong> Optimise BAU processes via automation.</span></li>
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span><span><strong>Supplier Relations:</strong> Manage strategic game supplier relationships.</span></li>
+
+                        <div
+                            class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <ul
+                                class="space-y-4 text-slate-700 dark:text-slate-300 font-medium leading-relaxed text-sm">
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span><span><strong>Casino
+                                            Management:</strong> Oversee roadmap & release activity.</span></li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span><span><strong>Feature
+                                            Dev:</strong> Manage rollout of platform enhancements.</span></li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span><span><strong>Operational
+                                            Excellence:</strong> Optimise BAU processes via automation.</span></li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span><span><strong>Supplier
+                                            Relations:</strong> Manage strategic game supplier relationships.</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Projects -->
-                <div class="lg:col-span-8 space-y-16">
-                    
+                <div class="lg:col-span-8 space-y-8 md:space-y-16">
+
                     <!-- PROJECT 1: NORTHSTAR -->
-                    <article class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-700 transition duration-500 ring-1 ring-slate-100 dark:ring-slate-800">
-                        
+                    <article
+                        class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-700 transition duration-500 ring-1 ring-slate-100 dark:ring-slate-800">
+
                         <!-- CONTENT (Top) -->
                         <div class="p-8 pb-0 relative z-10">
                             <!-- Badge (Mobile: Relative, Desktop: Absolute) -->
-                            <div class="w-fit mb-4 md:mb-0 md:absolute md:top-6 md:right-6 z-20 bg-slate-900 dark:bg-slate-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                            <div
+                                class="w-fit mb-4 md:mb-0 md:absolute md:top-6 md:right-6 z-20 bg-slate-900 dark:bg-slate-700 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
                                 <i class="fas fa-trophy text-yellow-400"></i> Signature Achievement
                             </div>
 
                             <div class="flex items-center justify-between mb-3">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 text-lg"><i class="fas fa-mobile-alt"></i></div>
-                                    <h3 class="text-xl font-bold text-slate-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">New Casino Lobby Project</h3>
+                                    <div
+                                        class="w-10 h-10 flex-shrink-0 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 text-lg">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <h3
+                                        class="text-xl font-bold text-slate-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
+                                        New Casino Lobby Project</h3>
                                 </div>
                             </div>
                             <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-                                Led a cross-functional collaboration with design, Developers, and CMS teams to create the new website. Personally populated game data, built all game feeds, and defined the strategic tile layouts to maximize engagement and optimize the user journey.
+                                Led a cross-functional collaboration with design, Developers, and CMS teams to create
+                                the new website. Personally populated game data, built all game feeds, and defined the
+                                strategic tile layouts to maximize engagement and optimize the user journey.
                             </p>
                             <div class="flex items-center gap-4 mb-8">
-                                <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-full uppercase">UX/UI</span>
-                                <a href="https://www.northstarbets.ca/casino" target="_blank" class="text-xs font-bold bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full hover:bg-blue-600 hover:text-white transition">
+                                <span
+                                    class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-full uppercase">UX/UI</span>
+                                <a href="https://www.northstarbets.ca/casino" target="_blank"
+                                    class="text-xs font-bold bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full hover:bg-blue-600 hover:text-white transition">
                                     Visit Live Site <i class="fas fa-external-link-alt ml-1"></i>
                                 </a>
                             </div>
                         </div>
 
                         <!-- PHONE MOCKUP (Bottom) - WITH GRAB LOGIC -->
-                        <div class="bg-slate-50 dark:bg-slate-950 py-12 border-t border-slate-100 dark:border-slate-800 relative flex justify-center overflow-hidden">
-                            <a href="https://www.northstarbets.ca/casino" target="_blank" class="absolute inset-0 z-0" aria-label="Visit Website"></a>
-                            <div class="relative mx-auto border-gray-800 bg-gray-800 border-[8px] rounded-[2rem] h-[560px] w-[260px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] z-10 transform group-hover:scale-[1.02] transition duration-700 ease-in-out">
-                                <div class="absolute top-[100px] -right-[10px] h-[40px] w-[4px] bg-gray-700 rounded-r-md"></div>
-                                <div class="absolute top-[120px] -left-[10px] h-[60px] w-[4px] bg-gray-700 rounded-l-md"></div>
-                                <div class="h-full w-full bg-black overflow-hidden rounded-[1.5rem] relative flex flex-col">
-                                    <div class="w-full h-8 bg-black flex justify-between items-center px-4 flex-shrink-0 z-20">
-                                        <div class="flex items-center gap-1"><span id="phone-clock" class="text-white text-[10px] font-semibold tracking-wide">--:--</span><i class="fas fa-location-arrow text-[8px] text-white"></i></div>
-                                        <div class="flex items-center gap-1.5 text-white"><i class="fas fa-signal text-[9px]"></i><i class="fas fa-wifi text-[9px]"></i><i class="fas fa-battery-half text-[10px]"></i></div>
+                        <div
+                            class="bg-slate-50 dark:bg-slate-950 py-12 border-t border-slate-100 dark:border-slate-800 relative flex justify-center overflow-hidden">
+
+                            <div
+                                class="relative mx-auto border-gray-800 bg-gray-800 border-[8px] rounded-[2rem] h-[560px] w-[260px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] z-10 transform group-hover:scale-[1.02] transition duration-700 ease-in-out">
+                                <div
+                                    class="absolute top-[100px] -right-[10px] h-[40px] w-[4px] bg-gray-700 rounded-r-md">
+                                </div>
+                                <div
+                                    class="absolute top-[120px] -left-[10px] h-[60px] w-[4px] bg-gray-700 rounded-l-md">
+                                </div>
+                                <div
+                                    class="h-full w-full bg-black overflow-hidden rounded-[1.5rem] relative flex flex-col">
+                                    <div
+                                        class="w-full h-8 bg-black flex justify-between items-center px-4 flex-shrink-0 z-20">
+                                        <div class="flex items-center gap-1"><span id="phone-clock"
+                                                class="text-white text-[10px] font-semibold tracking-wide">--:--</span><i
+                                                class="fas fa-location-arrow text-[8px] text-white"></i></div>
+                                        <div class="flex items-center gap-1.5 text-white"><i
+                                                class="fas fa-signal text-[9px]"></i><i
+                                                class="fas fa-wifi text-[9px]"></i><i
+                                                class="fas fa-battery-half text-[10px]"></i></div>
                                     </div>
                                     <!-- ENABLED GRAB -->
-                                    <div id="ns-screen" class="relative flex-1 w-full overflow-y-auto scrollbar-hide rounded-b-[1.5rem] bg-slate-900 cursor-grab select-none">
-                                        <img src="NS-lobby.webp" draggable="false" class="w-full h-auto block select-none pointer-events-none" alt="Mobile Lobby Screenshot" onerror="this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center text-slate-500 text-xs p-4 text-center\'>Image 1000004744.jpg not found</div>'">
+                                    <div id="ns-screen"
+                                        class="relative flex-1 w-full overflow-y-auto scrollbar-hide rounded-b-[1.5rem] bg-slate-900 cursor-grab select-none">
+                                        <img src="NS-lobby.webp" draggable="false"
+                                            class="w-full h-auto block select-none pointer-events-none"
+                                            alt="Mobile Lobby Screenshot"
+                                            onerror="this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center text-slate-500 text-xs p-4 text-center\'>Image not found</div>'">
                                     </div>
+                                    <!-- SCROLL OVERLAYS: Restrict inner scroll to middle 70% (15% margins) -->
+                                    <div class="absolute top-8 bottom-0 left-0 w-[15%] z-30"></div>
+                                    <div class="absolute top-8 bottom-0 right-0 w-[15%] z-30"></div>
                                 </div>
                             </div>
-                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-blue-400/10 blur-3xl rounded-full -z-0 pointer-events-none"></div>
+                            <div
+                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-blue-400/10 blur-3xl rounded-full -z-0 pointer-events-none">
+                            </div>
                         </div>
                     </article>
 
                     <!-- PROJECT 2: WORKFLOW AUTOMATION -->
-                    <article class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-fuchsia-200 dark:hover:border-fuchsia-800 transition duration-300 overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                    <article
+                        class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg hover:shadow-2xl hover:border-fuchsia-200 dark:hover:border-fuchsia-800 transition duration-300 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2">
+                        </div>
                         <div class="p-8 pb-4 relative z-10">
-                            <div class="w-fit mb-4 md:mb-0 md:absolute md:top-6 md:right-6 bg-fuchsia-50 dark:bg-fuchsia-900/30 text-fuchsia-600 dark:text-fuchsia-300 text-xs font-bold px-3 py-1 rounded-full border border-fuchsia-100 dark:border-fuchsia-800">🚀 Key Initiative</div>
+                            <div
+                                class="w-fit mb-4 md:mb-0 md:absolute md:top-6 md:right-6 bg-fuchsia-50 dark:bg-fuchsia-900/30 text-fuchsia-600 dark:text-fuchsia-300 text-xs font-bold px-3 py-1 rounded-full border border-fuchsia-100 dark:border-fuchsia-800">
+                                🚀 Key Initiative</div>
 
                             <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 bg-fuchsia-100 dark:bg-fuchsia-900/30 rounded-lg flex items-center justify-center text-fuchsia-500 dark:text-fuchsia-400 text-lg"><i class="fas fa-wand-magic-sparkles"></i></div>
+                                <div
+                                    class="w-10 h-10 flex-shrink-0 bg-fuchsia-100 dark:bg-fuchsia-900/30 rounded-lg flex items-center justify-center text-fuchsia-500 dark:text-fuchsia-400 text-lg">
+                                    <i class="fas fa-wand-magic-sparkles"></i>
+                                </div>
                                 <h3 class="text-xl font-bold text-slate-800 dark:text-white">Workflow Automation</h3>
                             </div>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Created a suite of bespoke applications to streamline and automate operational tasks.</p>
-                            <div class="flex gap-2 mb-6"><span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-full uppercase">Automation</span></div>
-                        </div>
-                        
-                        <div class="bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 p-6 pt-4 relative z-10">
-                            <div class="flex items-center justify-between mb-3 px-1">
-                                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Internal Tools Suite</div>
-                                <button onclick="document.getElementById('tool-carousel').scrollBy({left: 400, behavior: 'smooth'})" class="text-xs text-slate-400 hover:text-blue-400 transition-colors cursor-pointer focus:outline-none"><i class="fas fa-arrow-right mr-1"></i> Scroll to view</button>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Created a suite
+                                of bespoke applications to streamline and automate operational tasks.</p>
+                            <div class="flex gap-2 mb-6"><span
+                                    class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-full uppercase">Automation</span>
                             </div>
-                            <div id="tool-carousel" class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-1 scrollbar-hide">
+                        </div>
+
+                        <div
+                            class="bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 p-6 pt-4 relative z-10">
+                            <div class="flex items-center justify-between mb-3 px-1">
+                                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Internal Tools
+                                    Suite</div>
+                                <div class="flex items-center gap-3">
+                                    <button
+                                        onclick="document.getElementById('tool-carousel').scrollBy({left: -400, behavior: 'smooth'})"
+                                        class="text-xs text-slate-400 hover:text-blue-400 transition-colors cursor-pointer focus:outline-none flex items-center justify-center h-full"
+                                        aria-label="Scroll Left"><i class="fas fa-arrow-left"></i></button>
+                                    <button
+                                        onclick="document.getElementById('tool-carousel').scrollBy({left: 400, behavior: 'smooth'})"
+                                        class="text-xs text-slate-400 hover:text-blue-400 transition-colors cursor-pointer focus:outline-none flex items-center h-full"><i
+                                            class="fas fa-arrow-right mr-1"></i> Scroll to view</button>
+                                </div>
+                            </div>
+                            <div id="tool-carousel"
+                                class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-1 scrollbar-hide">
                                 <!-- Card 1 -->
-                                <div class="snap-center shrink-0 w-[85%] md:w-[400px] flex-none bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden relative group/card hover:-translate-y-1 transition duration-300">
-                                    <div class="h-80 bg-fuchsia-50 dark:bg-fuchsia-900/20 relative flex items-center justify-center overflow-hidden group cursor-zoom-in" onclick="openModal(this.querySelector('img').src)">
-                                        <img src="app1.png" class="w-full h-full object-cover transition duration-300 group-hover:brightness-110" onerror="this.style.display='none'">
+                                <div
+                                    class="snap-center shrink-0 w-[85%] md:w-[400px] flex-none bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden relative group/card hover:-translate-y-1 transition duration-300">
+                                    <div class="h-80 bg-fuchsia-50 dark:bg-fuchsia-900/20 relative flex items-center justify-center overflow-hidden group cursor-zoom-in"
+                                        onclick="openModal(this.querySelector('img').src)">
+                                        <img src="app1.png"
+                                            class="w-full h-full object-cover transition duration-300 group-hover:brightness-110"
+                                            onerror="this.style.display='none'">
                                     </div>
                                     <div class="p-4 border-t border-slate-100 dark:border-slate-800">
-                                        <div class="font-bold text-slate-800 dark:text-slate-200 text-sm">Game Creator</div>
-                                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Batch creates games with multiple tile formats. Automatically enriches data with Theme, Features, Provider, Volatility, and RTP.</div>
+                                        <div
+                                            class="font-extrabold text-slate-800 dark:text-slate-200 text-sm uppercase tracking-wider">
+                                            Game Creator
+                                        </div>
+                                        <div
+                                            class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed font-medium">
+                                            Batch creates games with multiple tile formats. Automatically enriches data
+                                            with Theme, Features, Provider, Volatility, and RTP.</div>
                                     </div>
                                 </div>
                                 <!-- Card 2 -->
-                                <div class="snap-center shrink-0 w-[85%] md:w-[400px] flex-none bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden relative group/card hover:-translate-y-1 transition duration-300">
-                                    <div class="h-80 bg-indigo-50 dark:bg-indigo-900/20 relative flex items-center justify-center overflow-hidden group cursor-zoom-in" onclick="openModal(this.querySelector('img').src)">
-                                        <img src="app2.png" class="w-full h-full object-cover transition duration-300 group-hover:brightness-110" onerror="this.style.display='none'">
+                                <div
+                                    class="snap-center shrink-0 w-[85%] md:w-[400px] flex-none bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden relative group/card hover:-translate-y-1 transition duration-300">
+                                    <div class="h-80 bg-indigo-50 dark:bg-indigo-900/20 relative flex items-center justify-center overflow-hidden group cursor-zoom-in"
+                                        onclick="openModal(this.querySelector('img').src)">
+                                        <img src="app2.png"
+                                            class="w-full h-full object-cover transition duration-300 group-hover:brightness-110"
+                                            onerror="this.style.display='none'">
                                     </div>
                                     <div class="p-4 border-t border-slate-100 dark:border-slate-800">
-                                        <div class="font-bold text-slate-800 dark:text-slate-200 text-sm">Game Tile Renamer</div>
-                                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Automatically renames batches of game tiles to match game codes. Replaces a previously manual task, handling resizing and organization instantly.</div>
+                                        <div
+                                            class="font-extrabold text-slate-800 dark:text-slate-200 text-sm uppercase tracking-wider">
+                                            Game Tile
+                                            Renamer</div>
+                                        <div
+                                            class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed font-medium">
+                                            Automatically renames batches of game tiles to match game codes. Replaces a
+                                            previously manual task, handling resizing and organization instantly.</div>
                                     </div>
                                 </div>
                                 <!-- Card 3 -->
-                                <div class="snap-center shrink-0 w-[85%] md:w-[400px] flex-none bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden relative group/card hover:-translate-y-1 transition duration-300">
-                                    <div class="h-80 bg-blue-50 dark:bg-blue-900/20 relative flex items-center justify-center overflow-hidden group cursor-zoom-in" onclick="openModal(this.querySelector('img').src)">
-                                        <img src="app3.png" class="w-full h-full object-cover transition duration-300 group-hover:brightness-110" onerror="this.style.display='none'">
+                                <div
+                                    class="snap-center shrink-0 w-[85%] md:w-[400px] flex-none bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden relative group/card hover:-translate-y-1 transition duration-300">
+                                    <div class="h-80 bg-blue-50 dark:bg-blue-900/20 relative flex items-center justify-center overflow-hidden group cursor-zoom-in"
+                                        onclick="openModal(this.querySelector('img').src)">
+                                        <img src="app3.png"
+                                            class="w-full h-full object-cover transition duration-300 group-hover:brightness-110"
+                                            onerror="this.style.display='none'">
                                     </div>
                                     <div class="p-4 border-t border-slate-100 dark:border-slate-800">
-                                        <div class="font-bold text-slate-800 dark:text-slate-200 text-sm">Certificate Tool</div>
-                                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Automatically extracts certificate and game data for regulatory logs. Replaces a manual process that took 4 hours each week to complete.</div>
+                                        <div
+                                            class="font-extrabold text-slate-800 dark:text-slate-200 text-sm uppercase tracking-wider">
+                                            Certificate
+                                            Tool</div>
+                                        <div
+                                            class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed font-medium">
+                                            Automatically extracts certificate and game data for regulatory logs.
+                                            Replaces a manual process that took 4 hours each week to complete.</div>
                                     </div>
                                 </div>
                                 <!-- Card 4 -->
-                                <div class="snap-center shrink-0 w-[85%] md:w-[400px] flex-none bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden relative group/card hover:-translate-y-1 transition duration-300">
-                                    <div class="h-80 bg-teal-50 dark:bg-teal-900/20 relative flex items-center justify-center overflow-hidden group cursor-zoom-in" onclick="openModal(this.querySelector('img').src)">
-                                        <img src="extension.webp" class="w-full h-full object-cover object-top transition duration-300 group-hover:brightness-110" onerror="this.style.display='none'">
+                                <div
+                                    class="snap-center shrink-0 w-[85%] md:w-[400px] flex-none bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden relative group/card hover:-translate-y-1 transition duration-300">
+                                    <div class="h-80 bg-teal-50 dark:bg-teal-900/20 relative flex items-center justify-center overflow-hidden group cursor-zoom-in"
+                                        onclick="openModal(this.querySelector('img').src)">
+                                        <img src="extension.webp"
+                                            class="w-full h-full object-cover object-top transition duration-300 group-hover:brightness-110"
+                                            onerror="this.style.display='none'">
                                     </div>
                                     <div class="p-4 border-t border-slate-100 dark:border-slate-800">
-                                        <div class="font-bold text-slate-800 dark:text-slate-200 text-sm">Portal Game Update Extension</div>
-                                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Chrome extension to mass update games quickly to enable and add RTP information.</div>
+                                        <div
+                                            class="font-extrabold text-slate-800 dark:text-slate-200 text-sm uppercase tracking-wider">
+                                            Portal Game
+                                            Update Extension</div>
+                                        <div
+                                            class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed font-medium">
+                                            Chrome extension to mass update games quickly to enable and add RTP
+                                            information.</div>
                                     </div>
                                 </div>
                             </div>
@@ -301,13 +505,23 @@
                     </article>
 
                     <!-- PROJECT 3: EXCEL -->
-                    <article class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg p-8 hover:shadow-2xl hover:border-emerald-400 dark:hover:border-emerald-500 transition duration-300 overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
-                        <div class="flex items-center gap-3 mb-4 relative z-10">
-                            <div class="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-lg shadow-inner"><i class="fas fa-file-excel"></i></div>
-                            <h3 class="text-xl font-bold text-slate-800 dark:text-white">Game Positioning Analysis Tool</h3>
+                    <article
+                        class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg p-8 hover:shadow-2xl hover:border-emerald-400 dark:hover:border-emerald-500 transition duration-300 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2">
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed relative z-10">Developed a proprietary game scoring tool to provide at-a-glance performance insights. The tool merges performance data with game feed information enabling effective analysis for casino lobby optimization.</p>
+                        <div class="flex items-center gap-3 mb-4 relative z-10">
+                            <div
+                                class="w-10 h-10 flex-shrink-0 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-lg shadow-inner">
+                                <i class="fas fa-file-excel"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-white">Game Positioning Analysis Tool
+                            </h3>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed relative z-10">
+                            Developed a proprietary game scoring tool to provide at-a-glance performance insights. The
+                            tool merges performance data with game feed information enabling effective analysis for
+                            casino lobby optimization.</p>
                     </article>
                 </div>
             </div>
@@ -315,65 +529,141 @@
 
         <!-- === ROLE 2: POKER PM (Grey/Dark Alt) === -->
         <section class="w-full bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-800">
-            <div class="max-w-6xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            <div class="max-w-6xl mx-auto px-6 py-8 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                 <div class="lg:col-span-4">
                     <div class="sticky top-24">
-                        <div class="text-slate-500 font-bold text-sm uppercase tracking-wide mb-1">08/2021 - 04/2024</div>
-                        <h2 class="text-3xl font-extrabold text-slate-800 dark:text-white mb-2">Poker Product Manager</h2>
-                        <div class="mb-6"><img src="digitalbeat.png" alt="Digital Beat" class="h-8 w-auto object-contain object-left" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-xl text-slate-500 font-medium\'>Digital Beat</div>'"></div>
-                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                            <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-medium leading-relaxed text-sm">
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Directed end-to-end lifecycle for the Poker product.</span></li>
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Partnered with in-house/provider teams to execute roadmap.</span></li>
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Designed promotional offerings to boost acquisition.</span></li>
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Translated performance data into actionable insights.</span></li>
+                        <div class="text-slate-500 font-bold text-sm uppercase tracking-wide mb-1">08/2021 - 04/2024
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-slate-800 dark:text-white mb-2">Poker Product Manager
+                        </h2>
+                        <div class="mb-6"><img src="digitalbeat.png" alt="Digital Beat"
+                                class="h-8 w-auto object-contain object-left"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-xl text-slate-500 font-medium\'>Digital Beat</div>'">
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <ul
+                                class="space-y-4 text-slate-700 dark:text-slate-300 font-medium leading-relaxed text-sm">
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Directed
+                                        end-to-end lifecycle for the Poker product.</span></li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Partnered
+                                        with in-house/provider teams to execute roadmap.</span></li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Designed
+                                        promotional offerings to boost acquisition.</span></li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Translated
+                                        performance data into actionable insights.</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:col-span-8 space-y-16">
+                <div class="lg:col-span-8 space-y-8 md:space-y-16">
                     <!-- Holland Casino Carousel -->
-                    <article class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden hover:shadow-xl hover:border-orange-400 dark:hover:border-orange-500 transition duration-500">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
-                        <div class="p-8 pb-4 relative z-10">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center text-orange-600 dark:text-orange-400 text-lg"><i class="fas fa-rocket"></i></div>
-                                    <h3 class="text-xl font-bold text-slate-800 dark:text-white">Holland Casino Online Poker Launch</h3>
-                                </div>
-                                <span class="px-3 py-1 bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-xs font-bold uppercase tracking-wide border border-orange-100 dark:border-orange-800">Major Launch</span>
-                            </div>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Managed the Poker product lifecycle, devising and executing all promotional campaigns. Collaborated with design, CRM, CMS, and provider product teams to ensure a premium market entry.</p>
+                    <article
+                        class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden hover:shadow-xl hover:border-orange-400 dark:hover:border-orange-500 transition duration-500">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2">
                         </div>
-                        <div id="hc-carousel" class="flex overflow-x-auto snap-x snap-mandatory h-[500px] bg-slate-800 relative scrollbar-hide border-t border-slate-100 dark:border-slate-800 hover:cursor-grab relative z-10">
-                            <div class="w-full flex-shrink-0 snap-center relative overflow-hidden"><img src="HollandCasino.png" alt="Holland Casino 1" class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105" onerror="this.style.display='none'"><div class="hidden absolute inset-0 items-center justify-center flex-col text-slate-400 bg-slate-800"><i class="fas fa-rocket text-4xl mb-2 opacity-30"></i><span class="text-xs font-mono bg-slate-700 text-white px-2 py-1 rounded">Add HollandCasino.png</span></div></div>
-                            <div class="w-full flex-shrink-0 snap-center relative bg-slate-700 flex items-center justify-center overflow-hidden"><img src="HollandCasino2.png" class="w-full h-full object-cover object-top absolute inset-0 transition duration-700 group-hover:scale-105" onerror="this.style.display='none'"><div class="text-center p-4"><i class="fas fa-image text-4xl text-slate-500 mb-2"></i><p class="text-slate-400 text-xs font-mono">Add HollandCasino2.png</p></div></div>
-                            <div class="w-full flex-shrink-0 snap-center relative bg-slate-600 flex items-center justify-center overflow-hidden"><img src="HollandCasino3.png" class="w-full h-full object-cover object-top absolute inset-0 transition duration-700 group-hover:scale-105" onerror="this.style.display='none'"><div class="text-center p-4"><i class="fas fa-image text-4xl text-slate-400 mb-2"></i><p class="text-slate-300 text-xs font-mono">Add HollandCasino3.png</p></div></div>
-                            <div class="absolute bottom-3 right-3 bg-black/50 text-white text-[10px] px-2 py-1 rounded-full pointer-events-none backdrop-blur-sm">Scroll for more &rarr;</div>
+                        <div class="p-8 pb-4 relative z-10">
+                            <div
+                                class="w-fit mb-4 md:mb-0 md:absolute md:top-6 md:right-6 bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-xs font-bold uppercase tracking-wide border border-orange-100 dark:border-orange-800 px-3 py-1">
+                                Major Launch</div>
+
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-10 h-10 flex-shrink-0 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center text-orange-600 dark:text-orange-400 text-lg">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-white">Holland Casino Online
+                                    Poker Launch</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Managed the
+                                Poker
+                                product lifecycle, devising and executing all promotional campaigns. Collaborated
+                                with
+                                design, CRM, CMS, and provider product teams to ensure a premium market entry.</p>
+                        </div>
+                        <div id="hc-carousel"
+                            class="flex overflow-x-auto snap-x snap-mandatory h-64 md:h-[500px] bg-slate-800 relative scrollbar-hide border-t border-slate-100 dark:border-slate-800 hover:cursor-grab relative z-10">
+                            <div class="w-full flex-shrink-0 snap-center relative overflow-hidden flex items-center justify-center cursor-zoom-in"
+                                onclick="openModal(this.querySelector('img').src)">
+                                <img src="HollandCasino.png" alt="Holland Casino 1"
+                                    class="w-full h-full object-contain transition duration-700 group-hover:scale-105"
+                                    onerror="this.style.display='none'">
+                                <div
+                                    class="hidden absolute inset-0 items-center justify-center flex-col text-slate-400 bg-slate-800">
+                                    <i class="fas fa-rocket text-4xl mb-2 opacity-30"></i><span
+                                        class="text-xs font-mono bg-slate-700 text-white px-2 py-1 rounded">Add
+                                        HollandCasino.png</span>
+                                </div>
+                            </div>
+                            <div class="w-full flex-shrink-0 snap-center relative bg-slate-700 flex items-center justify-center overflow-hidden cursor-zoom-in"
+                                onclick="openModal(this.querySelector('img').src)">
+                                <img src="HollandCasino2.png"
+                                    class="w-full h-full object-contain absolute inset-0 transition duration-700 group-hover:scale-105"
+                                    onerror="this.style.display='none'">
+                                <div class="text-center p-4"><i class="fas fa-image text-4xl text-slate-500 mb-2"></i>
+                                    <p class="text-slate-400 text-xs font-mono">Add HollandCasino2.png</p>
+                                </div>
+                            </div>
+                            <div class="w-full flex-shrink-0 snap-center relative bg-slate-600 flex items-center justify-center overflow-hidden cursor-zoom-in"
+                                onclick="openModal(this.querySelector('img').src)">
+                                <img src="HollandCasino3.png"
+                                    class="w-full h-full object-cover object-top absolute inset-0 transition duration-700 group-hover:scale-105"
+                                    onerror="this.style.display='none'">
+                                <div class="text-center p-4"><i class="fas fa-image text-4xl text-slate-400 mb-2"></i>
+                                    <p class="text-slate-300 text-xs font-mono">Add HollandCasino3.png</p>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute bottom-3 right-3 bg-black/50 text-white text-[10px] px-2 py-1 rounded-full pointer-events-none backdrop-blur-sm">
+                                Scroll for more &rarr;</div>
                         </div>
                     </article>
 
                     <!-- Dutch Championship -->
-                    <article class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-yellow-400 dark:hover:border-yellow-500 transition p-8 overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                    <article
+                        class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-yellow-400 dark:hover:border-yellow-500 transition p-8 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2">
+                        </div>
                         <div class="flex items-center justify-between mb-3 relative z-10">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center text-yellow-600 dark:text-yellow-400 text-lg"><i class="fas fa-trophy"></i></div>
-                                <h3 class="text-xl font-bold text-slate-800 dark:text-white">€100,000 Dutch Championship of Online Poker</h3>
+                                <div
+                                    class="w-10 h-10 flex-shrink-0 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center text-yellow-600 dark:text-yellow-400 text-lg">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-white">€100,000 Dutch Championship
+                                    of Online Poker</h3>
                             </div>
-                            <span class="px-3 py-1 bg-yellow-50 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full text-xs font-bold uppercase tracking-wide border border-yellow-100 dark:border-yellow-800 whitespace-nowrap">Promotion</span>
+
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-0 leading-relaxed relative z-10">Devised and managed this flagship promotion, working closely with multiple internal and external teams to organize the event. The tournaments were a major success, with guaranteed prize pools covered and increase in KPIs.</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-0 leading-relaxed relative z-10">Devised
+                            and managed this flagship promotion, working closely with multiple internal and external
+                            teams to organize the event. The tournaments were a major success, with guaranteed prize
+                            pools covered and increase in KPIs.</p>
                     </article>
 
-                    <article class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
-                        <div class="flex items-center gap-3 mb-3 relative z-10">
-                            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 text-lg"><i class="fas fa-chart-line"></i></div>
-                            <h3 class="text-xl font-bold text-slate-800 dark:text-white">Side Game Yield Optimization</h3>
+                    <article
+                        class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2">
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-0 relative z-10">Increased performance of casino side games within the Poker client through strategic improvements to game furnishing and targeted cross-vertical promotions.</p>
+                        <div class="flex items-center gap-3 mb-3 relative z-10">
+                            <div
+                                class="w-10 h-10 flex-shrink-0 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 text-lg">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-white">Side Game Yield Optimization
+                            </h3>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-0 relative z-10">Increased performance
+                            of casino side games within the Poker client through strategic improvements to game
+                            furnishing and targeted cross-vertical promotions.</p>
                     </article>
                 </div>
             </div>
@@ -381,45 +671,79 @@
 
         <!-- === ROLE 3: BETSSON (White) === -->
         <section class="w-full bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-900">
-            <div class="max-w-6xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            <div class="max-w-6xl mx-auto px-6 py-8 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                 <div class="lg:col-span-4">
                     <div class="sticky top-24">
-                        <div class="text-slate-500 font-bold text-sm uppercase tracking-wide mb-1">04/2020 - 08/2021</div>
+                        <div class="text-slate-500 font-bold text-sm uppercase tracking-wide mb-1">04/2020 - 08/2021
+                        </div>
                         <h2 class="text-3xl font-extrabold text-slate-800 dark:text-white mb-2">Poker Manager</h2>
-                        <div class="mb-6"><img src="betsson.png" alt="Betsson Group" class="h-8 w-auto object-contain object-left" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-xl text-slate-500 font-medium\'>Betsson Group</div>'"></div>
-                        <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                            <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-medium leading-relaxed text-sm">
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Overseeing the development and enhancement of the Poker vertical.</span></li>
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Devised and launched multiple exclusive promotions.</span></li>
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Partnered with regional teams to foster strong partnerships.</span></li>
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Analyzed KPI reports and managed regulatory compliance.</span></li>
+                        <div class="mb-6"><img src="betsson.png" alt="Betsson Group"
+                                class="h-8 w-auto object-contain object-left"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-xl text-slate-500 font-medium\'>Betsson Group</div>'">
+                        </div>
+                        <div
+                            class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+                            <ul
+                                class="space-y-4 text-slate-700 dark:text-slate-300 font-medium leading-relaxed text-sm">
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Overseeing
+                                        the development and enhancement of the Poker vertical.</span></li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Devised
+                                        and launched multiple exclusive promotions.</span></li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Partnered
+                                        with regional teams to foster strong partnerships.</span></li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Analyzed
+                                        KPI reports and managed regulatory compliance.</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="lg:col-span-8 space-y-16">
-                    <article class="relative group bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-xl transition duration-500 hover:border-rose-400 dark:hover:border-rose-500 overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
-                        <div class="flex items-center justify-between mb-4 relative z-10">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-rose-100 dark:bg-rose-900/30 rounded-lg flex items-center justify-center text-rose-600 dark:text-rose-400 text-lg"><i class="fas fa-server"></i></div>
-                                <h3 class="text-xl font-bold text-slate-800 dark:text-white">iPoker Platform Migration</h3>
-                            </div>
-                            <span class="px-3 py-1 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 rounded-full text-xs font-bold uppercase tracking-wide border border-rose-100 dark:border-rose-800">Major Launch</span>
+                <div class="lg:col-span-8 space-y-8 md:space-y-16">
+                    <article
+                        class="relative group bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition duration-500 hover:border-rose-400 dark:hover:border-rose-500 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2">
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed relative z-10">
-                            Played a pivotal role in the Betsson group's migration to the iPoker platform. Coordinated complex data transfer and technical compliance requirements to ensure zero downtime for players during the transition.
-                        </p>
+                        <div class="p-8 relative z-10">
+                            <div
+                                class="w-fit mb-4 md:mb-0 md:absolute md:top-6 md:right-6 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 rounded-full text-xs font-bold uppercase tracking-wide border border-rose-100 dark:border-rose-800 px-3 py-1">
+                                Major Launch</div>
+
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-10 h-10 flex-shrink-0 bg-rose-100 dark:bg-rose-900/30 rounded-lg flex items-center justify-center text-rose-600 dark:text-rose-400 text-lg">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-white">iPoker Platform Migration
+                                </h3>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                                Played a pivotal role in the Betsson group's migration to the iPoker platform.
+                                Coordinated
+                                complex data transfer and technical compliance requirements to ensure zero downtime for
+                                players during the transition.
+                            </p>
+                        </div>
                     </article>
 
-                    <article class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                    <article
+                        class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2">
+                        </div>
                         <div class="flex items-center gap-3 mb-3 relative z-10">
-                            <div class="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center text-amber-600 dark:text-amber-400 text-lg"><i class="fas fa-bullhorn"></i></div>
+                            <div
+                                class="w-10 h-10 flex-shrink-0 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center text-amber-600 dark:text-amber-400 text-lg">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
                             <h3 class="text-xl font-bold text-slate-800 dark:text-white">Promotional Strategy</h3>
                         </div>
                         <p class="text-sm text-slate-600 dark:text-slate-400 mb-0 relative z-10">
-                            Devised and launched multiple exclusive promotions to drive activity and player engagement across key markets. Analyzed campaign performance to iteratively improve retention metrics.
+                            Devised and launched multiple exclusive promotions to drive activity and player engagement
+                            across key markets. Analyzed campaign performance to iteratively improve retention metrics.
                         </p>
                     </article>
                 </div>
@@ -428,33 +752,80 @@
 
         <!-- === ROLE 4: PLAYTECH (Grey/Dark Alt) === -->
         <section class="w-full bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-900 pb-32">
-            <div class="max-w-6xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            <div class="max-w-6xl mx-auto px-6 py-8 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                 <div class="lg:col-span-4">
                     <div class="sticky top-24">
-                        <div class="text-slate-400 font-bold text-sm uppercase tracking-wide mb-1">08/2016 - 04/2020</div>
-                        <h2 class="text-3xl font-extrabold text-slate-800 dark:text-white mb-2">Promotions & Operations Manager</h2>
-                        <div class="mb-6"><img src="playtech.png" alt="Playtech" class="h-8 w-auto object-contain object-left" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-xl text-slate-500 font-medium\'>Playtech</div>'"></div>
-                        
-                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                            <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-medium leading-relaxed text-sm">
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Managed network-wide poker promotions and strategies.</span></li>
-                                <li class="flex items-start"><span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Oversaw operational integrity across the Playtech network.</span></li>
+                        <div class="text-slate-400 font-bold text-sm uppercase tracking-wide mb-1">08/2016 - 04/2020
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-slate-800 dark:text-white mb-2">Promotions & Operations
+                            Manager</h2>
+                        <div class="mb-6"><img src="playtech.png" alt="Playtech"
+                                class="h-8 w-auto object-contain object-left"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-xl text-slate-500 font-medium\'>Playtech</div>'">
+                        </div>
+
+                        <div
+                            class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <ul
+                                class="space-y-4 text-slate-700 dark:text-slate-300 font-medium leading-relaxed text-sm">
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Devised
+                                        and managed network-wide poker promotions and strategies.</span>
+                                </li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Point
+                                        of contact for licensees</span></li>
+                                <li class="flex items-start"><span
+                                        class="mr-3 mt-1.5 w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></span><span>Worked
+                                        with product team to define features.</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="lg:col-span-8 space-y-16">
-                    <article class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-xl hover:border-blue-400 dark:hover:border-blue-500 transition duration-500 overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                <div class="lg:col-span-8 space-y-8 md:space-y-16">
+                    <article
+                        class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-blue-400 dark:hover:border-blue-500 transition duration-500 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2">
+                        </div>
+                        <div class="p-8 relative z-10">
+                            <div
+                                class="w-fit mb-4 md:mb-0 md:absolute md:top-6 md:right-6 bg-blue-100 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wide border border-blue-200 px-3 py-1">
+                                Promotions</div>
+
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-10 h-10 flex-shrink-0 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 text-lg">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-white">Network Promotion Ecosystem
+                                </h3>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                                Devised major network-wide promotions and tournament series. Partnered closely with
+                                product
+                                teams to specify, develop, and roll out key platform features to the global network.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Network MTT Schedules -->
+                    <article
+                        class="relative group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm hover:shadow-xl hover:border-violet-400 dark:hover:border-violet-500 transition duration-500 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2">
+                        </div>
                         <div class="flex items-center justify-between mb-4 relative z-10">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 text-lg"><i class="fas fa-network-wired"></i></div>
-                                <h3 class="text-xl font-bold text-slate-800 dark:text-white">Network Promotion Ecosystem</h3>
+                                <div
+                                    class="w-10 h-10 flex-shrink-0 bg-violet-100 dark:bg-violet-900/30 rounded-lg flex items-center justify-center text-violet-600 dark:text-violet-400 text-lg">
+                                    <i class="fas fa-calendar-days"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-white">Network MTT schedules</h3>
                             </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wide border border-blue-200">Promotions</span>
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed relative z-10">
-                            Devised major network-wide promotions and tournament series. Partnered closely with product teams to specify, develop, and roll out key platform features to the global network.
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-0 leading-relaxed relative z-10">
+                            Managed over &euro;5,000,000 in monthly guaranteed prizes.
                         </p>
                     </article>
                 </div>
@@ -463,168 +834,190 @@
     </main>
 
     <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
-        <div class="max-w-4xl mx-auto text-center px-6"><div class="flex flex-col md:flex-row justify-between items-center text-sm opacity-60"><p>&copy; 2025 Bob Fox. All rights reserved.</p></div></div>
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm opacity-60">
+                <p>&copy; 2026 Bob Fox. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-<script>
-    /* ==================================================================
-       1. PHONE MOCKUP: DRAG-TO-SCROLL & AUTO-SCROLL LOGIC
-       Handles manual dragging and automatic vertical scrolling
-       ================================================================== */
-    const phoneScreen = document.getElementById('ns-screen');
-    let phoneAutoScrollSpeed = 1.0; // Speed of auto-scroll
-    let isPhoneInteracting = false; // Global flag to pause auto-scroll
-    let phoneScrollInterval;
-    
-    // --- A. DRAG LOGIC ---
-    let isDown = false;
-    let startY;
-    let scrollTop;
+    <script>
+        /* ==================================================================
+           1. PHONE MOCKUP: DRAG-TO-SCROLL & AUTO-SCROLL LOGIC
+           Handles manual dragging and automatic vertical scrolling
+           ================================================================== */
+        const phoneScreen = document.getElementById('ns-screen');
+        let phoneAutoScrollSpeed = 1.0; // Speed of auto-scroll
+        let isPhoneInteracting = false; // Global flag to pause auto-scroll
+        let phoneScrollInterval;
 
-    if (phoneScreen) {
-        phoneScreen.addEventListener('mousedown', (e) => {
-            isDown = true;
-            isPhoneInteracting = true; // Pause auto-scroll
-            phoneScreen.classList.add('cursor-grabbing');
-            phoneScreen.classList.remove('cursor-grab');
-            startY = e.pageY - phoneScreen.offsetTop;
-            scrollTop = phoneScreen.scrollTop;
-        });
+        // --- A. DRAG LOGIC ---
+        let isDown = false;
+        let startY;
+        let scrollTop;
 
-        phoneScreen.addEventListener('mouseleave', () => {
-            isDown = false;
-            isPhoneInteracting = false; // Resume auto-scroll
-            phoneScreen.classList.remove('cursor-grabbing');
-            phoneScreen.classList.add('cursor-grab');
-        });
+        if (phoneScreen) {
+            phoneScreen.addEventListener('mousedown', (e) => {
+                isDown = true;
+                isPhoneInteracting = true; // Pause auto-scroll
+                phoneScreen.classList.add('cursor-grabbing');
+                phoneScreen.classList.remove('cursor-grab');
+                startY = e.pageY - phoneScreen.offsetTop;
+                scrollTop = phoneScreen.scrollTop;
+            });
 
-        phoneScreen.addEventListener('mouseup', () => {
-            isDown = false;
-            isPhoneInteracting = false; // Resume auto-scroll
-            phoneScreen.classList.remove('cursor-grabbing');
-            phoneScreen.classList.add('cursor-grab');
-        });
+            phoneScreen.addEventListener('mouseleave', () => {
+                isDown = false;
+                isPhoneInteracting = false; // Resume auto-scroll
+                phoneScreen.classList.remove('cursor-grabbing');
+                phoneScreen.classList.add('cursor-grab');
+            });
 
-        phoneScreen.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const y = e.pageY - phoneScreen.offsetTop;
-            const walk = (y - startY) * 2; // *2 for faster drag sensation
-            phoneScreen.scrollTop = scrollTop - walk;
-        });
+            phoneScreen.addEventListener('mouseup', () => {
+                isDown = false;
+                isPhoneInteracting = false; // Resume auto-scroll
+                phoneScreen.classList.remove('cursor-grabbing');
+                phoneScreen.classList.add('cursor-grab');
+            });
 
-        // Touch support (Mobile)
-        phoneScreen.addEventListener('touchstart', () => { isPhoneInteracting = true; });
-        phoneScreen.addEventListener('touchend', () => { 
-            setTimeout(() => { isPhoneInteracting = false; }, 1000); 
-        });
-    }
+            phoneScreen.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const y = e.pageY - phoneScreen.offsetTop;
+                const walk = (y - startY) * 2; // *2 for faster drag sensation
+                phoneScreen.scrollTop = scrollTop - walk;
+            });
 
-    // --- B. AUTO-SCROLL LOGIC ---
-    function startPhoneAutoScroll() {
-        if(phoneScrollInterval) clearInterval(phoneScrollInterval);
-        
-        phoneScrollInterval = setInterval(() => {
-            // Only scroll if user is NOT hovering, NOT dragging, and element exists
-            if (!isPhoneInteracting && !isDown && phoneScreen) {
-                phoneScreen.scrollTop += phoneAutoScrollSpeed;
-                
-                // If reached bottom, loop back to top instantly
-                if (phoneScreen.scrollTop + phoneScreen.clientHeight >= phoneScreen.scrollHeight - 1) {
-                    phoneScreen.scrollTop = 0;
+            // Touch support (Mobile)
+            phoneScreen.addEventListener('touchstart', () => { isPhoneInteracting = true; });
+            phoneScreen.addEventListener('touchend', () => {
+                setTimeout(() => { isPhoneInteracting = false; }, 1000);
+            });
+        }
+
+        // --- B. AUTO-SCROLL LOGIC ---
+        function startPhoneAutoScroll() {
+            if (phoneScrollInterval) clearInterval(phoneScrollInterval);
+
+            phoneScrollInterval = setInterval(() => {
+                // Only scroll if user is NOT hovering, NOT dragging, and element exists
+                if (!isPhoneInteracting && !isDown && phoneScreen) {
+                    phoneScreen.scrollTop += phoneAutoScrollSpeed;
+
+                    // If reached bottom, loop back to top instantly
+                    if (phoneScreen.scrollTop + phoneScreen.clientHeight >= phoneScreen.scrollHeight - 1) {
+                        phoneScreen.scrollTop = 0;
+                    }
                 }
-            }
-        }, 20); // 50fps
-    }
+            }, 20); // 50fps
+        }
 
-    // Initialize Phone Auto-Scroll
-    if(phoneScreen) {
-        // Pause on simple hover even if not dragging
-        phoneScreen.addEventListener('mouseenter', () => { isPhoneInteracting = true; });
-        startPhoneAutoScroll();
-    }
-
-
-    /* ==================================================================
-       2. IMAGE MODAL (Popups for Internal Tools)
-       ================================================================== */
-    function openModal(src) { 
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImg');
-        modalImg.src = src; 
-        modal.classList.remove('hidden'); 
-    }
-
-    function closeModal() { 
-        document.getElementById('imageModal').classList.add('hidden'); 
-    }
-
-    // Close modal on Escape key
-    document.addEventListener('keydown', e => { 
-        if(e.key === "Escape") closeModal(); 
-    });
+        // Initialize Phone Auto-Scroll
+        if (phoneScreen) {
+            // Pause on simple hover even if not dragging
+            phoneScreen.addEventListener('mouseenter', () => { isPhoneInteracting = true; });
+            startPhoneAutoScroll();
+        }
 
 
-    /* ==================================================================
-       3. DYNAMIC CLOCK (Top left of Phone)
-       ================================================================== */
-    function updateClock() {
-        const d = new Date();
-        const h = String(d.getHours()).padStart(2, '0');
-        const m = String(d.getMinutes()).padStart(2, '0');
-        const el = document.getElementById('phone-clock'); 
-        if(el) el.innerText = `${h}:${m}`;
-    }
-    setInterval(updateClock, 1000); 
-    updateClock(); // Run immediately on load
+        /* ==================================================================
+           2. IMAGE MODAL (Popups for Internal Tools)
+           ================================================================== */
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modalImg.src = src;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', e => {
+            if (e.key === "Escape") closeModal();
+        });
 
 
-    /* ==================================================================
-       4. INFINITE CAROUSEL ROTATION (Horizontal)
-       Handles 'hc-carousel' (Holland) and 'tool-carousel' (Workflows)
-       ================================================================== */
-    function initInfiniteCarousel(carouselId, scrollSpeed) {
-        const carousel = document.getElementById(carouselId);
-        if (!carousel) return;
+        /* ==================================================================
+           3. DYNAMIC CLOCK (Top left of Phone)
+           ================================================================== */
+        function updateClock() {
+            const d = new Date();
+            const h = String(d.getHours()).padStart(2, '0');
+            const m = String(d.getMinutes()).padStart(2, '0');
+            const el = document.getElementById('phone-clock');
+            if (el) el.innerText = `${h}:${m}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock(); // Run immediately on load
 
-        let isHovering = false;
-        
-        // Stop scrolling on interaction
-        carousel.addEventListener('mouseenter', () => isHovering = true);
-        carousel.addEventListener('mouseleave', () => isHovering = false);
-        carousel.addEventListener('touchstart', () => isHovering = true);
-        carousel.addEventListener('touchend', () => setTimeout(() => isHovering = false, 2000));
 
-        setInterval(() => {
-            if (!isHovering) {
-                // Calculate scroll metrics
-                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-                const cardWidth = carousel.firstElementChild ? carousel.firstElementChild.offsetWidth + 16 : 300; // +16 for gap
+        /* ==================================================================
+           4. INFINITE CAROUSEL ROTATION (Horizontal)
+           Handles 'hc-carousel' (Holland) and 'tool-carousel' (Workflows)
+           ================================================================== */
+        function initInfiniteCarousel(carouselId, scrollSpeed) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
 
-                // If at the end, scroll back to start. Else scroll right.
-                if (carousel.scrollLeft >= maxScroll - 10) {
-                    carousel.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            let isHovering = false;
+
+            // Stop scrolling on interaction
+            carousel.addEventListener('mouseenter', () => isHovering = true);
+            carousel.addEventListener('mouseleave', () => isHovering = false);
+            carousel.addEventListener('touchstart', () => isHovering = true);
+            carousel.addEventListener('touchend', () => setTimeout(() => isHovering = false, 2000));
+
+            setInterval(() => {
+                if (!isHovering) {
+                    // Calculate scroll metrics
+                    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                    const cardWidth = carousel.firstElementChild ? carousel.firstElementChild.offsetWidth + 16 : 300; // +16 for gap
+
+                    // If at the end, scroll back to start. Else scroll right.
+                    if (carousel.scrollLeft >= maxScroll - 10) {
+                        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    }
                 }
+            }, scrollSpeed);
+        }
+
+        // Apply to Holland Casino Carousel (3 seconds)
+        initInfiniteCarousel('hc-carousel', 3000);
+
+        // Apply to Internal Tools Carousel (4 seconds - slower for reading)
+        // Note: Ensure your workflow automation carousel div has id="tool-carousel"
+        initInfiniteCarousel('tool-carousel', 4000);
+
+
+        /* ==================================================================
+           5. THEME TOGGLE (Dark/Light Mode)
+           ================================================================== */
+        // Initialize Theme based on System Preference or LocalStorage
+        function initTheme() {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
             }
-        }, scrollSpeed);
-    }
+        }
+        initTheme();
 
-    // Apply to Holland Casino Carousel (3 seconds)
-    initInfiniteCarousel('hc-carousel', 3000);
-
-    // Apply to Internal Tools Carousel (4 seconds - slower for reading)
-    // Note: Ensure your workflow automation carousel div has id="tool-carousel"
-    initInfiniteCarousel('tool-carousel', 4000);
-
-
-    /* ==================================================================
-       5. THEME TOGGLE (Dark/Light Mode)
-       ================================================================== */
-    function toggleTheme() { 
-        document.documentElement.classList.toggle('dark'); 
-    }
-</script>
+        // Toggle Theme and save preference
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
 
 </body>
+
 </html>
